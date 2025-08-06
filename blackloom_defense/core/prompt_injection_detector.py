@@ -3,8 +3,10 @@ Prompt Injection Detection Module
 Detects various forms of prompt injection attacks using pattern matching and ML techniques
 """
 
+import base64
 import re
 import logging
+import urllib.parse
 from typing import Dict, List, Optional, Set
 from dataclasses import dataclass
 from collections import defaultdict
@@ -15,7 +17,7 @@ class InjectionResult:
  is_malicious: bool
  confidence: float
  attack_types: List[str]
- metadata: Dict[str, any]
+ metadata: Dict[str, Any]
 
 
 class PromptInjectionDetector:
@@ -182,7 +184,6 @@ class PromptInjectionDetector:
 
  if base64_matches:
  # Try to decode and check for injection patterns
- import base64
  for match in base64_matches[:5]: # Limit to prevent DoS
  try:
  decoded = base64.b64decode(match + '==').decode('utf-8', errors='ignore')
@@ -193,20 +194,21 @@ class PromptInjectionDetector:
  confidence_scores.append(0.8)
  metadata['encoded_injection'] = ['base64_encoded_payload']
  break
- except:
+ except (ValueError, UnicodeDecodeError, Exception) as e:
+ self.logger.debug(f"Base64 decoding failed: {e}")
  continue
 
  # URL encoding check
  if '%' in text and len(re.findall(r'%[0-9A-Fa-f]{2}', text)) > 3:
  try:
- import urllib.parse
  decoded = urllib.parse.unquote(text)
  result = self.detect(decoded)
  if result.is_malicious:
  attack_types.append('encoded_injection')
  confidence_scores.append(0.7)
  metadata['encoded_injection'] = ['url_encoded_payload']
- except:
+ except (ValueError, UnicodeDecodeError, Exception) as e:
+ self.logger.debug(f"URL decoding failed: {e}")
  pass
 
  def _check_delimiter_attacks(self, text: str, attack_types: List[str],

@@ -3,6 +3,7 @@ Input Sanitization Module
 Safely sanitizes potentially malicious inputs while preserving legitimate functionality
 """
 
+import base64
 import re
 import logging
 from typing import List, Dict, Optional, Tuple
@@ -174,11 +175,16 @@ class InputSanitizer:
  # Replace code blocks with safe alternatives
  text = re.sub(r'```[^`]*```', '[CODE BLOCK REMOVED]', text)
 
- # Replace excessive delimiters
- text = re.sub(r'---{3,}', '---', text)
- text = re.sub(r'==={3,}', '===', text)
- text = re.sub(r'\*{5,}', '***', text)
- text = re.sub(r'#{5,}', '###', text)
+ # Replace excessive delimiters using more Pythonic mapping approach
+ delimiter_replacements = {
+ r'---{3,}': '---',
+ r'==={3,}': '===', 
+ r'\*{5,}': '***',
+ r'#{5,}': '###',
+ }
+ 
+ for pattern, replacement in delimiter_replacements.items():
+ text = re.sub(pattern, replacement, text)
 
  return text
 
@@ -191,12 +197,12 @@ class InputSanitizer:
 
  for match in base64_matches:
  try:
- import base64
  decoded = base64.b64decode(match + '==').decode('utf-8', errors='ignore')
  # Recursively sanitize decoded content
  sanitized_decoded = self.sanitize(decoded, ['direct_injection', 'role_manipulation'])
  text = text.replace(match, f"[DECODED: {sanitized_decoded[:50]}...]")
- except:
+ except (ValueError, UnicodeDecodeError, Exception) as e:
+ self.logger.debug(f"Base64 decoding failed: {e}")
  text = text.replace(match, '[INVALID ENCODING REMOVED]')
 
  # Handle URL encoding
@@ -206,7 +212,8 @@ class InputSanitizer:
  # If significantly different after decoding, it was likely encoded
  if decoded != text:
  text = self.sanitize(decoded, ['direct_injection', 'role_manipulation'])
- except:
+ except (ValueError, UnicodeDecodeError, Exception) as e:
+ self.logger.debug(f"URL decoding failed: {e}")
  pass
 
  return text
@@ -258,11 +265,12 @@ class InputSanitizer:
 
  def _limit_special_characters(self, text: str) -> str:
  """Limit ratio of special characters"""
- if len(text) == 0:
+ if not text:
  return text
 
- special_chars = [c for c in text if not c.isalnum() and not c.isspace()]
- special_ratio = len(special_chars) / len(text)
+ # More efficient calculation without creating intermediate list
+ special_char_count = sum(1 for c in text if not c.isalnum() and not c.isspace())
+ special_ratio = special_char_count / len(text)
 
  if special_ratio > self.max_special_char_ratio:
  # Keep only alphanumeric, spaces, and common punctuation

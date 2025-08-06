@@ -131,18 +131,27 @@ class DefenseEngine:
  Detect adversarial patterns in input text
  Returns confidence score (0.0 - 1.0)
  """
+ # Pre-calculate text metrics for efficiency
+ text_length = len(text)
+ if text_length == 0:
+ return 0.0
+ 
+ word_count = len(text.split())
+ alnum_ratio = sum(1 for c in text if c.isalnum()) / text_length
+ special_char_ratio = sum(1 for c in text if not c.isalnum() and not c.isspace()) / text_length
+ 
  adversarial_indicators = [
  # Token stuffing patterns
- len(text.split()) > 1000, # Unusually long inputs
+ word_count > 1000,  # Unusually long inputs
 
  # Encoding attacks
- 'base64' in text.lower() and len([c for c in text if c.isalnum()]) / len(text) > 0.9,
+ 'base64' in text.lower() and alnum_ratio > 0.9,
 
  # Repetitive patterns (potential gradient attacks)
  self._has_repetitive_patterns(text),
 
  # Special character flooding
- len([c for c in text if not c.isalnum() and not c.isspace()]) / len(text) > 0.3,
+ special_char_ratio > 0.3,
  ]
 
  score = sum(adversarial_indicators) / len(adversarial_indicators)

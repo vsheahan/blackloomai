@@ -75,6 +75,12 @@ def verify_api_key(credentials: HTTPAuthorizationCredentials = Depends(security)
  return credentials.credentials
 
 
+def extract_model_name(model_url: str) -> str:
+ """Extract model name from URL in a Pythonic way."""
+ from pathlib import Path
+ return Path(model_url).name if model_url else "unknown_model"
+
+
 # Application setup
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -213,7 +219,7 @@ async def secure_proxy(
 
  # Record blocked request in monitoring system
  try:
- model_name = request_data.target_model_url.split('/')[-1] if '/' in request_data.target_model_url else "unknown_model"
+ model_name = extract_model_name(request_data.target_model_url)
  complexity_score = len(request_data.user_input) + (len(defense_result.detected_attacks) * 100)
 
  monitoring_manager.record_request(
@@ -310,7 +316,7 @@ async def secure_proxy(
  # Step 6: Record request in monitoring system
  try:
  # Extract model name from URL for tracking
- model_name = request_data.target_model_url.split('/')[-1] if '/' in request_data.target_model_url else "unknown_model"
+ model_name = extract_model_name(request_data.target_model_url)
 
  # Calculate complexity score based on input length and detected attacks
  complexity_score = len(request_data.user_input) + (len(defense_result.detected_attacks) * 100)

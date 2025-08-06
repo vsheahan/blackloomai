@@ -3,15 +3,16 @@ BlackLoom Defense - Cryptographic Key Management
 Handles RSA key generation, signing, and verification for model integrity
 """
 
-import os
 import base64
 import json
+import logging
+from pathlib import Path
 from typing import Optional, Tuple
+
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.exceptions import InvalidSignature
 from getpass import getpass
-import logging
 
 
 class CryptoManager:
@@ -27,7 +28,7 @@ class CryptoManager:
  key_name: str,
  output_dir: str = ".",
  key_size: int = 2048,
- password: Optional[str] = None) -> Tuple[str, str]:
+ password: Optional[str] = None) -> Tuple[Path, Path]:
  """
  Generate a new RSA key pair for model signing
 
@@ -40,7 +41,8 @@ class CryptoManager:
  Returns:
  Tuple of (private_key_path, public_key_path)
  """
- os.makedirs(output_dir, exist_ok=True)
+ output_path = Path(output_dir)
+ output_path.mkdir(exist_ok=True)
 
  # Generate RSA key pair
  private_key = rsa.generate_private_key(
@@ -58,7 +60,7 @@ class CryptoManager:
  raise ValueError("Passwords do not match")
 
  # Save private key (encrypted)
- private_key_path = os.path.join(output_dir, f"{key_name}.pem")
+ private_key_path = output_path / f"{key_name}.pem"
  with open(private_key_path, "wb") as f:
  f.write(private_key.private_bytes(
  encoding=serialization.Encoding.PEM,
@@ -69,7 +71,7 @@ class CryptoManager:
  ))
 
  # Save public key
- public_key_path = os.path.join(output_dir, f"{key_name}.pub")
+ public_key_path = output_path / f"{key_name}.pub"
  with open(public_key_path, "wb") as f:
  f.write(public_key.public_bytes(
  encoding=serialization.Encoding.PEM,
@@ -77,8 +79,8 @@ class CryptoManager:
  ))
 
  # Set secure file permissions
- os.chmod(private_key_path, 0o600) # Private key readable only by owner
- os.chmod(public_key_path, 0o644) # Public key readable by all
+ private_key_path.chmod(0o600)  # Private key readable only by owner
+ public_key_path.chmod(0o644)   # Public key readable by all
 
  self.logger.info(f"Generated RSA key pair: {key_name}")
  return private_key_path, public_key_path
