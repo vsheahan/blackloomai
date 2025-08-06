@@ -1,0 +1,444 @@
+# BlackLoom Defense - Git Ignore File
+# Excludes sensitive files and artifacts from version control
+
+# ============================================================================
+# SECURITY & SECRETS
+# ============================================================================
+
+# API Keys and Authentication
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+api_keys.txt
+secrets.json
+config.env
+.env
+.env.*
+auth_tokens.txt
+
+# Cryptographic Keys (Model Integrity System)
+private_keys/
+public_keys/
+certificates/
+keystore/
+*.rsa
+*.ecdsa
+*.ed25519
+blackloom_defense/integrity/crypto/keys/
+blackloom_defense/integrity/crypto/private/
+blackloom_defense/integrity/crypto/certificates/
+
+# HashTraceAI Security Files
+hashtraceai/keys/
+hashtraceai/private/
+hashtraceai/certificates/
+
+# Database Credentials
+database.conf
+db_config.json
+connection_strings.txt
+
+# ============================================================================
+# APPLICATION DATA & LOGS
+# ============================================================================
+
+# Audit Logs (contain sensitive access patterns)
+audit_logs/
+*.audit
+blackloom_defense/integrity/audit_logs/
+blackloom_defense/logs/
+access_logs/
+security_logs/
+
+# Model Files (potentially proprietary)
+models/
+*.model
+*.pkl
+*.bin
+*.safetensors
+*.onnx
+registered_models/
+model_registry/
+models_registry.json
+model_registry.json
+
+# Monitoring Data
+monitoring_data/
+performance_metrics/
+alert_history/
+dos_attack_logs/
+
+# SQLite Databases (may contain sensitive data)
+*.db
+*.sqlite
+*.sqlite3
+blackloom.db
+audit.db
+monitoring.db
+
+# ============================================================================
+# PYTHON & DEVELOPMENT
+# ============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.env/
+blackloom_env/
+blackloom_venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit Test / Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+test_results/
+test_reports/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# ============================================================================
+# DEVELOPMENT TOOLS & EDITORS
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================================================
+# OPERATING SYSTEM
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# DEPLOYMENT & INFRASTRUCTURE
+# ============================================================================
+
+# Docker
+.dockerignore
+Dockerfile.prod
+docker-compose.prod.yml
+.docker/
+
+# Kubernetes
+k8s-secrets/
+*.kubeconfig
+deployment-prod.yaml
+secrets.yaml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Helm
+charts/*/secrets/
+values-prod.yaml
+values-staging.yaml
+
+# ============================================================================
+# DOCUMENTATION & TEMPORARY FILES
+# ============================================================================
+
+# Documentation builds
+docs/_build/
+site/
+.readthedocs.yml
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.orig
+
+# Backup files
+*.backup
+*~
+*.old
+
+# ============================================================================
+# BLACKLOOM SPECIFIC
+# ============================================================================
+
+# Demo artifacts
+demo_results/
+demo_logs/
+attack_scenarios/results/
+monitoring_screenshots/
+
+# Test artifacts
+test_models/
+test_keys/
+test_certificates/
+integration_test_results/
+
+# Performance benchmarks
+benchmarks/results/
+performance_reports/
+load_test_results/
+
+# Configuration overrides
+config_local.json
+config_dev.json
+config_prod.json
+local_settings.py
+
+# User-specific files
+user_configs/
+personal_notes.txt
+todo_local.txt
+
+# ============================================================================
+# RESEARCH & ACADEMIC
+# ============================================================================
+
+# Research data
+research_data/
+datasets/
+attack_vectors/
+vulnerability_reports/
+*.research
+*.analysis
+
+# Academic papers and drafts
+papers/
+drafts/
+*.tex
+*.aux
+*.log
+*.out
+*.pdf
+*.bbl
+*.blg
+
+# ============================================================================
+# COMPLIANCE & LEGAL
+# ============================================================================
+
+# Compliance reports (may contain sensitive data)
+compliance_reports/
+audit_reports/
+security_assessments/
+penetration_test_results/
+
+# Legal documents
+legal/
+contracts/
+licensing/
+terms_of_service/
+privacy_policy/
+
+# ============================================================================
+# MONITORING & OBSERVABILITY  
+# ============================================================================
+
+# Metrics and monitoring
+prometheus_data/
+grafana_data/
+alertmanager_data/
+jaeger_data/
+zipkin_data/
+
+# Log aggregation
+fluentd_buffer/
+logstash_data/
+elasticsearch_data/
+
+# APM data
+newrelic_agent.log
+datadog_agent.log
+*.trace
+
+# ============================================================================
+# CLOUD & SERVICES
+# ============================================================================
+
+# AWS
+.aws/
+*.pem
+*.p12
+
+# Google Cloud
+gcloud_key.json
+service_account.json
+*.json.key
+
+# Azure
+azure_credentials.json
+*.publishsettings
+
+# Generic cloud configs
+cloud_config.yaml
+service_configs/
+
+# ============================================================================
+# MISC
+# ============================================================================
+
+# Node.js (if used for tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Temporary uploads
+uploads/
+temp_uploads/
+file_uploads/
+
+# Cache directories
+.cache/
+cache/
+tmp/
+
+# OS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Custom exclusions (add project-specific files here)
+# custom_configs/
+# proprietary_algorithms/
+# client_specific/
