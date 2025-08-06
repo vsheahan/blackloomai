@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BlackLoom Defense Demo Script
+BlackLoom AI Demo Script
 Demonstrates the capabilities of the AI security platform
 """
 
@@ -10,10 +10,10 @@ from blackloom_defense.core import DefenseEngine, ThreatLevel
 
 
 def print_banner():
- """Print the BlackLoom Defense banner"""
+ """Print the BlackLoom AI banner"""
  banner = """
 ╔══════════════════════════════════════════════════════════════╗
-║ BlackLoom Defense ║
+║ BlackLoom AI ║
 ║ AI Security Platform ║
 ║ Protecting AI Models from Attacks ║
 ╚══════════════════════════════════════════════════════════════╝
@@ -251,7 +251,7 @@ def main():
  """Main demo function"""
 
  print_banner()
- print("Welcome to the BlackLoom Defense demonstration!")
+ print("Welcome to the BlackLoom AI demonstration!")
  print("This demo showcases our AI security platform's capabilities.")
 
  try:
@@ -264,7 +264,7 @@ def main():
 
  print_section("DEMO COMPLETE")
  print(" All tests completed successfully!")
- print(" BlackLoom Defense is ready to protect your AI models.")
+ print(" BlackLoom AI is ready to protect your AI models.")
  print("\n Next Steps:")
  print(" • Start the API server: python -m blackloom_defense.api.gateway")
  print(" • Run full test suite: python -m pytest tests/ -v")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test client for BlackLoom Defense API
+Test client for BlackLoom AI API
 """
 
 import requests

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BlackLoom Defense - Model Integrity System Demo
+BlackLoom AI - Model Integrity System Demo
 Demonstrates the comprehensive model integrity and auditing capabilities
 """
 
@@ -17,10 +17,10 @@ from blackloom_defense.integrity.audit_logger import AccessType
 
 
 def print_banner():
- """Print the BlackLoom Defense banner"""
+ """Print the BlackLoom AI banner"""
  banner = """
 ╔══════════════════════════════════════════════════════════════╗
-║ BlackLoom Defense - Model Integrity Demo ║
+║ BlackLoom AI - Model Integrity Demo ║
 ║ Comprehensive AI Model Protection & Auditing ║
 ║ Addresses OWASP ML05 (Model Theft) & ML10 ║
 ╚══════════════════════════════════════════════════════════════╝
@@ -366,7 +366,7 @@ def main():
  """Main demo function"""
 
  print_banner()
- print("Welcome to the BlackLoom Defense Model Integrity System demonstration!")
+ print("Welcome to the BlackLoom AI Model Integrity System demonstration!")
  print("This demo showcases comprehensive AI model protection capabilities.")
 
  model_dir = None
@@ -417,7 +417,7 @@ def main():
  demo_suspicious_pattern_detection(manager)
 
  print_section("DEMO SUMMARY")
- print(" BlackLoom Defense Model Integrity System Capabilities Demonstrated:")
+ print(" BlackLoom AI Model Integrity System Capabilities Demonstrated:")
  print(" Cryptographic key generation and management")
  print(" Model manifest generation with digital signatures")
  print(" File-level integrity verification (SHA-256)")
@@ -427,7 +427,7 @@ def main():
  print(" Compliance reporting (ISO 42001 aligned)")
  print(" Model provenance and authenticity verification")
 
- print(f"\n Your AI models are now protected by BlackLoom Defense!")
+ print(f"\n Your AI models are now protected by BlackLoom AI!")
  print(" • Real-time integrity monitoring")
  print(" • Cryptographic provenance verification")
  print(" • Anti-theft detection systems")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive API test demonstrating all BlackLoom Defense capabilities
+Comprehensive API test demonstrating all BlackLoom AI capabilities
 """
 
 import requests
@@ -12,7 +12,7 @@ import base64
 def comprehensive_test():
  """Run comprehensive API tests"""
 
- print(" BlackLoom Defense - Comprehensive API Test")
+ print(" BlackLoom AI - Comprehensive API Test")
  print("=" * 80)
 
  base_url = "http://localhost:8000"
@@ -186,7 +186,7 @@ def comprehensive_test():
  else:
  print(" Proxy did not block malicious request")
 
- print(f" Defense Analysis: Safe={result['defense_analysis']['is_safe']}")
+ print(f" AI Analysis: Safe={result['defense_analysis']['is_safe']}")
  print(f" Output Monitoring: Safe={result['output_integrity']['is_safe']}")
  print(f" Total Processing: {result['total_processing_time_ms']:.2f}ms")
 
@@ -248,7 +248,7 @@ def comprehensive_test():
  print(" Performance: < 10ms average")
  print(" API Documentation: Available at /docs")
 
- print(f"\n BlackLoom Defense is ready for production!")
+ print(f"\n BlackLoom AI is ready for production!")
  print(" • Real-time threat detection and blocking")
  print(" • OWASP ML security compliance")
  print(" • High-performance processing")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Start BlackLoom Defense API server and run tests
+Start BlackLoom AI API server and run tests
 """
 
 import subprocess

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-BlackLoom Defense - Monitoring System Demo
+BlackLoom AI - Monitoring System Demo
 Comprehensive demonstration of post-deployment monitoring capabilities
 Addresses OWASP ML04 (Model DoS) and ML09 (Overreliance)
 """
@@ -14,7 +14,7 @@ import random
 
 
 class MonitoringDemo:
- """Demo script for BlackLoom Defense monitoring system"""
+ """Demo script for BlackLoom AI monitoring system"""
 
  def __init__(self, api_base_url: str = "http://localhost:8000", api_key: str = "blackloom-demo-key"):
  self.api_base_url = api_base_url.rstrip('/')
@@ -306,12 +306,12 @@ class MonitoringDemo:
 
  def run_comprehensive_demo(self):
  """Run the complete monitoring system demonstration"""
- print(" Starting BlackLoom Defense Monitoring System Demo")
+ print(" Starting BlackLoom AI Monitoring System Demo")
  print("="*80)
 
  # Check API availability
  if not self.check_api_health():
- print(" ERROR: BlackLoom Defense API is not running!")
+ print(" ERROR: BlackLoom AI API is not running!")
  print("Please start the API server first: python -m blackloom_defense.api.gateway")
  return
 
@@ -362,7 +362,7 @@ class MonitoringDemo:
  """Interactive menu for testing specific features"""
  while True:
  print("\n" + "="*60)
- print("BlackLoom Defense - Interactive Monitoring Demo")
+ print("BlackLoom AI - Interactive Monitoring Demo")
  print("="*60)
  print("1. Check System Health")
  print("2. Simulate Normal Requests")
@@ -433,7 +433,7 @@ class MonitoringDemo:
 if __name__ == "__main__":
  import argparse
 
- parser = argparse.ArgumentParser(description="BlackLoom Defense Monitoring Demo")
+ parser = argparse.ArgumentParser(description="BlackLoom AI Monitoring Demo")
  parser.add_argument("--api-url", default="http://localhost:8000", help="API base URL")
  parser.add_argument("--api-key", default="blackloom-demo-key", help="API key for authentication")
  parser.add_argument("--interactive", "-i", action="store_true", help="Run in interactive mode")

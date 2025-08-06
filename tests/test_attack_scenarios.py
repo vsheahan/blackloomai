@@ -1,5 +1,5 @@
 """
-Comprehensive Test Suite for BlackLoom Defense
+Comprehensive Test Suite for BlackLoom AI
 Tests various attack scenarios and defense mechanisms
 """
 
