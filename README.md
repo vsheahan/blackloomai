@@ -6,7 +6,7 @@
 
 *Experimental AI Security Platform - Layered defenses for AI models in production environments*
 
-This project is an experimental proof of concept demonstrating a spectrum of AI security capabilities for BlackLoom AI, weaving together layered defenses to protect machine learning models from evolving threats. Not intended for production use without further review and hardening.
+This project is a proof of concept exploring key AI security capabilities for BlackLoom AI. It weaves together layered defenses to protect machine learning models from evolving threats. This implementation is not production-ready and requires additional review and hardening.
 
 ## Core Security Components
 
