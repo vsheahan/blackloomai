@@ -45,7 +45,7 @@ BlackLoom AI provides comprehensive protection against OWASP ML Security Top 10 
 ### Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vsheahan/blackloomai.git
 cd blackloom
 pip install -r requirements.txt
 ```
