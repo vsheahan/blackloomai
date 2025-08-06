@@ -6,7 +6,7 @@
 
 **Comprehensive AI Security Platform - Complete protection for AI models in production**
 
-BlackLoom Defense is an enterprise-grade security platform designed to protect AI models from the complete spectrum of security threats outlined in the OWASP Machine Learning Security Top 10. It provides real-time defense, model integrity verification, and continuous post-deployment monitoring through advanced detection algorithms and automated mitigation strategies.
+BlackLoom AI is an POC security platform designed to protect AI models from the complete spectrum of security threats outlined in the OWASP Machine Learning Security Top 10. It provides real-time defense, model integrity verification, and continuous post-deployment monitoring through advanced detection algorithms and automated mitigation strategies.
 
 ## Core Security Components
 
