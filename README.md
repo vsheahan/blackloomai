@@ -6,9 +6,11 @@
 
 **Experimental AI Security Platform - Complete protection for AI models in production**
 
-BlackLoom AI is a POC security platform designed to protect AI models from the complete spectrum of security threats outlined in the OWASP Machine Learning Security Top 10. It provides real-time defense, model integrity verification, and continuous post-deployment monitoring through advanced detection algorithms and automated mitigation strategies.
+This project is an experimental proof of concept demonstrating the full spectrum of AI security capabilities for BlackLoom AI, weaving together layered defenses to protect machine learning models from evolving threats. Not intended for production use without further review and hardening.
 
 ## Core Security Components
+
+Each component is woven into the platform to form a resilient, interlocking AI security framework.
 
 ### 1. Real-Time Input/Output Defense
 - **Prompt Injection Detection**: Advanced pattern matching detecting sophisticated injection attacks
@@ -74,7 +76,7 @@ python demo_blackloom.py
 
 ## Architecture
 
-BlackLoom AI follows a comprehensive modular architecture:
+BlackLoom AI follows a modular architecture that weaves together defense, integrity, and monitoring into a unified platform:
 
 ```
 blackloom_defense/
@@ -315,8 +317,4 @@ python demo_blackloom.py --comprehensive
 - [ISO/IEC 27090 AI Security](https://www.iso.org/standard/80392.html)
 
 
-This project is an experimental proof of concept demonstrating the full spectrum of AI security capabilities for BlackLoom AI. Not intended for production use without further review and hardening.
-
----
-
-**BlackLoom AI** - *Comprehensive AI Security for the Modern Enterprise*
+**BlackLoom AI** - *Weaving together comprehensive AI security for the modern enterprise*
