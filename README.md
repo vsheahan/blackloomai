@@ -53,7 +53,7 @@ pip install -r requirements.txt
 ### Running the Platform
 
 ```bash
-# Start the complete BlackLoom Defense platform
+# Start the complete BlackLoom AI platform
 python -m blackloom_defense.api.gateway
 
 # The API will be available at http://localhost:8000
@@ -301,7 +301,7 @@ python demo_blackloom.py --comprehensive
 
 ## Contributing
 
-BlackLoom Defense is designed as a comprehensive AI security platform. For production deployment and contributions:
+BlackLoom AI is designed as a comprehensive AI security platform. For production deployment and contributions:
 
 1. **Security Review**: Complete security audit and penetration testing
 2. **Performance Testing**: Load testing and performance optimization
