@@ -299,16 +299,6 @@ python demo_blackloom.py --comprehensive
 - **Security Auditing**: Comprehensive security assessment of AI systems
 - **Threat Intelligence**: Analyze emerging AI security threats
 
-## Contributing
-
-BlackLoom AI is designed as a comprehensive AI security platform. For production deployment and contributions:
-
-1. **Security Review**: Complete security audit and penetration testing
-2. **Performance Testing**: Load testing and performance optimization
-3. **Integration Testing**: Validate with production AI model deployments
-4. **Documentation**: Expand operational documentation and runbooks
-5. **Community**: Engage with AI security research community
-
 ## Resources & Research
 
 ### OWASP ML Security
