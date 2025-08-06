@@ -1,4 +1,4 @@
-# BlackLoom Defense
+# BlackLoom AI
 
 <p align="center">
   <img src="assets/blackloomai-logo.png" alt="BlackLoom AI Logo" width="600"/>
@@ -30,7 +30,7 @@ BlackLoom AI is an POC security platform designed to protect AI models from the 
 
 ## OWASP ML Security Coverage
 
-BlackLoom Defense provides comprehensive protection against OWASP ML Security Top 10 risks:
+BlackLoom AI provides comprehensive protection against OWASP ML Security Top 10 risks:
 
 | Risk | Component | Protection |
 |------|-----------|------------|
@@ -74,7 +74,7 @@ python demo_blackloom.py
 
 ## Architecture
 
-BlackLoom Defense follows a comprehensive modular architecture:
+BlackLoom AI follows a comprehensive modular architecture:
 
 ```
 blackloom_defense/
@@ -324,10 +324,9 @@ BlackLoom Defense is designed as a comprehensive AI security platform. For produ
 - [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 - [ISO/IEC 27090 AI Security](https://www.iso.org/standard/80392.html)
 
-## License
 
-This project demonstrates comprehensive AI security capabilities for BlackLoom AI. Enterprise licensing available for production deployments.
+This project is an experimental proof of concept demonstrating the full spectrum of AI security capabilities for BlackLoom AI. Not intended for production use without further review and hardening.
 
 ---
 
-**BlackLoom Defense** - *Comprehensive AI Security for the Modern Enterprise*
+**BlackLoom AI** - *Comprehensive AI Security for the Modern Enterprise*
