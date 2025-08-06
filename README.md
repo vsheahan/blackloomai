@@ -1,38 +1,8 @@
 # BlackLoom Defense
 
-<div align="center">
- <img src="assets/blackloom-logo.png" alt="BlackLoom AI - Weaving Digital Security" width="600"/>
-
- <p>
- <img src="https://img.shields.io/badge/AI_Security-Enterprise_Grade-00D4AA?style=for-the-badge&logo=shield&logoColor=white" alt="Enterprise AI Security"/>
- <img src="https://img.shields.io/badge/OWASP_ML-Compliant-00B4D8?style=for-the-badge&logo=owasp&logoColor=white" alt="OWASP ML Compliant"/>
- <img src="https://img.shields.io/badge/Real_Time-Protection-90E0EF?style=for-the-badge&logo=lightning&logoColor=black" alt="Real-time Protection"/>
- </p>
-
- <p>
- <a href="#-quick-start">
- <img src="https://img.shields.io/badge/Quick_Start-Get_Started-00F5FF?style=for-the-badge&labelColor=004C4C" alt="Quick Start"/>
- </a>
- <a href="#-api-endpoints">
- <img src="https://img.shields.io/badge/API_Documentation-Explore_APIs-00D4AA?style=for-the-badge&labelColor=003E3E" alt="API Documentation"/>
- </a>
- <a href="#-running-demos">
- <img src="https://img.shields.io/badge/Live_Demo-Try_Now-39FF14?style=for-the-badge&labelColor=1A4A1A" alt="Live Demo"/>
- </a>
- </p>
-
- <p>
- <a href="https://github.com/blackloom-ai/blackloom-defense/releases">
- <img src="https://img.shields.io/github/v/release/blackloom-ai/blackloom-defense?style=for-the-badge&logo=github&color=00CED1&labelColor=2F4F4F" alt="Latest Release"/>
- </a>
- <a href="https://github.com/blackloom-ai/blackloom-defense/blob/main/LICENSE">
- <img src="https://img.shields.io/badge/License-Enterprise-00B4D8?style=for-the-badge&logo=balance-scale&logoColor=white" alt="License"/>
- </a>
- <a href="https://github.com/blackloom-ai/blackloom-defense/stargazers">
- <img src="https://img.shields.io/github/stars/blackloom-ai/blackloom-defense?style=for-the-badge&logo=star&color=FFD700&labelColor=4B0082" alt="GitHub Stars"/>
- </a>
- </p>
-</div>
+<p align="center">
+  <img src="assets/blackloomai-logo.png" alt="BlackLoom AI Logo" width="600"/>
+</p>
 
 **Comprehensive AI Security Platform - Complete protection for AI models in production**
 
